@@ -22,6 +22,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     private static final String TAG = SecondActivity.class.getSimpleName();
     String pair_text = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +55,19 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     Gesture gesture;
+
     private void saveGesture() {
+        if (gesture == null) {
+            Toast.makeText(this, "Please train a gesture", Toast.LENGTH_SHORT).show();
+        }
         if (pair_text == null || pair_text.equals("")) {
-            Toast.makeText(this,"Please enter a pair text",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please enter a pair text", Toast.LENGTH_SHORT).show();
             return;
         }
-        Log.d(TAG, "saveGesture: pair "+pair_text);
+        Log.d(TAG, "saveGesture: pair " + pair_text);
+        gesture.setText(pair_text);
+        gesture.save();
+        finish();
     }
 
     private void createGesture() {
