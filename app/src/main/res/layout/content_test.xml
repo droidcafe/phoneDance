@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_second"
+    android:id="@+id/content_test"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -11,41 +11,26 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="test.com.phonedance.SecondActivity"
-    tools:showIn="@layout/activity_second">
+    tools:context="test.com.phonedance.TestActivity"
+    tools:showIn="@layout/activity_test">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/ti2"
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textColorHint="@color/white">
-
-        <EditText
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gesture Text"
-            android:textColor="@color/white" />
-    </android.support.design.widget.TextInputLayout>
+        android:id="@+id/gesture_text"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:text="Your gesture text will appear here"
+        />
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/button_test"
         style="@style/new_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/palette_green"
-        android:text="Save Gesture" />
-
-
-    <Button
-        android:id="@+id/gesture_new"
-        style="@style/new_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button_save"
-        android:background="@color/palette_red"
-        android:text="Create New Gesture" />
+        android:text="Start Test" />
 
 </RelativeLayout>
