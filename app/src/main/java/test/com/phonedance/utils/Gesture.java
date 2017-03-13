@@ -1,8 +1,11 @@
 package test.com.phonedance.utils;
 
+import android.provider.Settings;
 import android.util.Log;
 
 import java.util.ArrayList;
+
+import test.com.phonedance.Global;
 
 /**
  * Created by jayadeep on 3/13/17.
@@ -15,6 +18,7 @@ public class Gesture {
     public static final int MIN_COUNT = 50;
 
     ArrayList<SensorData> sensorDataList;
+    String text;
 
     OnGestureCompleteListener listener;
 
@@ -42,6 +46,18 @@ public class Gesture {
 
     public ArrayList<SensorData> getSensorDataList() {
         return sensorDataList;
+    }
+
+    public void setText(String t) {
+        text = t;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void save() {
+        Global.gestures.add(this);
     }
 
     public interface OnGestureCompleteListener {
