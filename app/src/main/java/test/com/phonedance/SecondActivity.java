@@ -46,12 +46,11 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                 pair_text = text.getText().toString();
                 saveGesture();
                 break;
-
             case R.id.gesture_new:
                 createGesture();
                 break;
             case R.id.gesture_stop:
-
+                gesture.stop();
                 break;
         }
 

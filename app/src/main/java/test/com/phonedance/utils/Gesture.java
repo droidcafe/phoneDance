@@ -104,6 +104,7 @@ public class Gesture {
     }
 
     public void stop() {
+        Log.i("gestr", "stopping");
         listener.onGestureComplete();
     }
 
@@ -118,7 +119,7 @@ public class Gesture {
 
 
         try {
-          //  outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            //  outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
        /*     outputStream.write(string.getBytes());
             outputStream.close();*/
         } catch (Exception e) {

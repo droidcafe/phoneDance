@@ -42,7 +42,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 //                showText();
                 break;
             case R.id.button_test_stop:
-
+                gesture.stop();
                 break;
         }
     }
