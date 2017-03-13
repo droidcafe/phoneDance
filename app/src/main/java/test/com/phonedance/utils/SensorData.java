@@ -6,11 +6,11 @@ package test.com.phonedance.utils;
 
 public class SensorData {
 
-    public static final int THRESHOLD = 2;
+    public static final int THRESHOLD = 5;
 
     float x, y, z;
 
-    public static final int IDLE_THRESCHOLD = 2;
+    public static final int IDLE_THRESCHOLD = 3;
 
     public SensorData(float x, float y, float z) {
         this.x = x;

@@ -13,8 +13,8 @@ import test.com.phonedance.Global;
 
 public class Gesture {
 
-    public static final int IDLE_LIMIT = 10;
-    public static final int MIN_COUNT = 50;
+    public static final int IDLE_LIMIT = 30;
+    public static final int MIN_COUNT = 70;
 
     ArrayList<SensorData> sensorDataList;
     String text;

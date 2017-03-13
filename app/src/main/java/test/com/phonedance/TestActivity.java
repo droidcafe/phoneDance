@@ -50,7 +50,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         gesture = new Gesture(this);
         text = "";
         showText();
-        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL * 5);
+        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
