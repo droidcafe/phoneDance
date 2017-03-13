@@ -31,6 +31,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         findViewById(R.id.button_save).setOnClickListener(this);
         findViewById(R.id.gesture_new).setOnClickListener(this);
+        findViewById(R.id.gesture_stop).setOnClickListener(this);
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 //        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL * 5);
@@ -48,6 +49,9 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.gesture_new:
                 createGesture();
+                break;
+            case R.id.gesture_stop:
+
                 break;
         }
 

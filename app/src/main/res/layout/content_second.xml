@@ -41,11 +41,20 @@
         android:text="Create New Gesture" />
 
     <Button
-        android:id="@+id/button_save"
+        android:id="@+id/gesture_stop"
         style="@style/new_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/gesture_new"
+        android:background="@color/palette_red"
+        android:text="Stop Gesture reading" />
+
+    <Button
+        android:id="@+id/button_save"
+        style="@style/new_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/gesture_stop"
         android:background="@color/palette_green"
         android:visibility="gone"
         android:text="Save Gesture" />

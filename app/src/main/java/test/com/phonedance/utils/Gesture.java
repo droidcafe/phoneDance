@@ -1,8 +1,8 @@
 package test.com.phonedance.utils;
 
-import android.provider.Settings;
 import android.util.Log;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 import test.com.phonedance.Global;
@@ -94,5 +94,20 @@ public class Gesture {
 
     public interface OnGestureCompleteListener {
         void onGestureComplete();
+    }
+
+    public void saveGesture() {
+        String filename = "myfile";
+        String string = "Hello world!";
+        FileOutputStream outputStream;
+
+
+        try {
+          //  outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+       /*     outputStream.write(string.getBytes());
+            outputStream.close();*/
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
