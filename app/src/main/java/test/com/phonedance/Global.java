@@ -12,4 +12,13 @@ import test.com.phonedance.utils.Gesture;
 
 public class Global extends Application {
     public static ArrayList<Gesture> gestures = new ArrayList<Gesture>();
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+
+    }
+
+
 }

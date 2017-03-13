@@ -60,8 +60,9 @@ public class Gesture {
         return text;
     }
 
-    public void save() {
+    public void save(Context context) {
         Global.gestures.add(this);
+        saveGesture(context);
     }
 
     public String findText() {
@@ -101,7 +102,7 @@ public class Gesture {
         void onGestureComplete();
     }
 
-    public void saveGesture(Context context) {
+    public static void saveGesture(Context context) {
         String filename = "myfile";
         String string = "Hello world!";
         FileOutputStream outputStream;
@@ -117,7 +118,7 @@ public class Gesture {
         }
     }
 
-    public void getGestures(Context context) {
+    public static void getGestures(Context context) {
         try {
             FileInputStream fis = context.openFileInput("myfile");
             ObjectInputStream is = new ObjectInputStream(fis);

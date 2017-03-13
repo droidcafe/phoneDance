@@ -70,7 +70,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         }
         Log.d(TAG, "saveGesture: pair " + pair_text);
         gesture.setText(pair_text);
-        gesture.save();
+        gesture.save(this);
         finish();
     }
 
