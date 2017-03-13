@@ -25,11 +25,20 @@
         />
 
     <Button
-        android:id="@+id/button_test"
+        android:id="@+id/button_test_stop"
         style="@style/new_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/palette_red"
+        android:text="Stop Test" />
+
+    <Button
+        android:id="@+id/button_test"
+        style="@style/new_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_above="@id/button_test_stop"
         android:background="@color/palette_green"
         android:text="Start Test" />
 

@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import test.com.phonedance.utils.Gesture;
 
@@ -31,6 +30,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
         findViewById(R.id.button_test).setOnClickListener(this);
+        findViewById(R.id.button_test_stop).setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +40,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 createGesture();
 //                text = testGesture();
 //                showText();
+                break;
+            case R.id.button_test_stop:
+
                 break;
         }
     }
