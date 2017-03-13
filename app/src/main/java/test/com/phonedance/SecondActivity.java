@@ -71,7 +71,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     private void createGesture() {
         gesture = new Gesture(this);
-        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, accelerometer, Gesture.SENSOR_DELAY);
     }
 
 
