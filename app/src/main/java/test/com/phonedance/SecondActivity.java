@@ -35,7 +35,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 //        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL * 5);
-        createGesture();
+//        createGesture();
     }
 
     @Override
