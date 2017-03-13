@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button_test:
-
+                startActivity(new Intent(this,TestActivity.class));
                 break;
             case R.id.button_view:
-
+                startActivity(new Intent(this,ListActivity.class));
                 break;
         }
     }

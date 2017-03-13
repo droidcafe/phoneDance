@@ -15,7 +15,10 @@ import java.util.ArrayList;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     ArrayList<String> gestureList;
-    ListAdapter(ArrayList<String> list) {
+
+
+
+    public ListAdapter(ArrayList<String> list) {
         gestureList = list;
     }
     @Override
