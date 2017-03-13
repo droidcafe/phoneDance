@@ -5,17 +5,29 @@ package test.com.phonedance.utils;
  */
 
 public class SensorData {
-    public enum MotionType{
-        INCREASE,
-        DECREASE,
-        NO_CHANGE
-    }
 
-    MotionType x,y,z;
+    float x, y, z;
 
-    public SensorData(MotionType x,MotionType y,MotionType z){
+    public static final int IDLE_THRESCHOLD = 2;
+
+    public SensorData(float x, float y, float z) {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public SensorData(float[] values) {
+        this.x = values[0];
+        this.y = values[1];
+        this.z = values[2];
+    }
+
+    boolean isIdle() {
+//        return ((((int) x) == 0) && (((int) y) == 0) && (((int) z) == 0));
+        return (
+                (int) Math.abs(x) < IDLE_THRESCHOLD &&
+                        (int) Math.abs(y) < IDLE_THRESCHOLD &&
+                        (int) Math.abs(z) < IDLE_THRESCHOLD
+        );
     }
 }
