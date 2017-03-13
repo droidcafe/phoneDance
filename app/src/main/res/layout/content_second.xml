@@ -47,7 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/gesture_new"
         android:background="@color/palette_red"
-        android:text="Stop Gesture reading" />
+        android:text="Stop Gesture reading"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/button_save"

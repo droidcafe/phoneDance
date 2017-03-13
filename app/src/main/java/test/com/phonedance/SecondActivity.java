@@ -49,6 +49,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.gesture_new:
                 createGesture();
+                findViewById(R.id.button_test_stop).setVisibility(View.VISIBLE);
                 break;
             case R.id.gesture_stop:
 
