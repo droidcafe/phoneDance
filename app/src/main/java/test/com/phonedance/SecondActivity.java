@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import test.com.phonedance.utils.Gesture;
-import test.com.phonedance.utils.SensorData;
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener, SensorEventListener, Gesture.OnGestureCompleteListener {
 
@@ -111,6 +110,8 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         sensorManager.unregisterListener(this);
         Log.i("sensor", "finished");
         Log.i("sensor", gesture.getSensorDataList().size() + "");
+
+        findViewById(R.id.button_save).setVisibility(View.VISIBLE);
     }
 
     @Override

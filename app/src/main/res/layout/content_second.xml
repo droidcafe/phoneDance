@@ -29,23 +29,25 @@
             android:textColor="@color/white" />
     </android.support.design.widget.TextInputLayout>
 
+
+    <Button
+        android:id="@+id/gesture_new"
+        style="@style/new_button"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/palette_red"
+        android:text="Create New Gesture" />
+
     <Button
         android:id="@+id/button_save"
         style="@style/new_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/gesture_new"
         android:background="@color/palette_green"
+        android:visibility="gone"
         android:text="Save Gesture" />
-
-
-    <Button
-        android:id="@+id/gesture_new"
-        style="@style/new_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/button_save"
-        android:background="@color/palette_red"
-        android:text="Create New Gesture" />
 
 </RelativeLayout>
