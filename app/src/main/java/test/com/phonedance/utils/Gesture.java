@@ -65,6 +65,7 @@ public class Gesture {
         for (int i = 0; i < gestures.size(); i++) {
             Gesture gesture = gestures.get(i);
             results[i] = gesture.compare(this);
+            Log.i("compare", gesture.getText() + " " + results[i] + "%");
         }
         int max = 0;
         for (int i = 1; i < results.length; i++) {
