@@ -48,6 +48,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.gesture_new:
                 createGesture();
+                findViewById(R.id.button_test_stop).setVisibility(View.VISIBLE);
                 break;
             case R.id.gesture_stop:
                 gesture.stop();
@@ -68,7 +69,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         }
         Log.d(TAG, "saveGesture: pair " + pair_text);
         gesture.setText(pair_text);
-        gesture.save();
+        gesture.save(this);
         finish();
     }
 

@@ -1,9 +1,16 @@
 package test.com.phonedance.utils;
 
+
+import android.content.Context;
+
 import android.hardware.SensorManager;
 import android.util.Log;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import test.com.phonedance.Global;
@@ -57,8 +64,9 @@ public class Gesture {
         return text;
     }
 
-    public void save() {
+    public void save(Context context) {
         Global.gestures.add(this);
+        saveGesture(context);
     }
 
     public String findText() {
@@ -112,18 +120,35 @@ public class Gesture {
         void onGestureComplete();
     }
 
-    public void saveGesture() {
+    public static void saveGesture(Context context) {
         String filename = "myfile";
         String string = "Hello world!";
         FileOutputStream outputStream;
 
-
         try {
-            //  outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-       /*     outputStream.write(string.getBytes());
-            outputStream.close();*/
+            outputStream = context.openFileOutput(filename, Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(outputStream);
+            os.writeObject(Global.gestures);
+            outputStream.write(string.getBytes());
+            outputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void getGestures(Context context) {
+        try {
+            FileInputStream fis = context.openFileInput("myfile");
+            ObjectInputStream is = new ObjectInputStream(fis);
+            Global.gestures = (ArrayList<Gesture>) is.readObject();
+            is.close();
+            fis.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 }

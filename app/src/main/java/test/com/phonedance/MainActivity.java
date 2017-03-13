@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import junit.framework.Test;
+import test.com.phonedance.utils.Gesture;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Gesture.getGestures(this);
         findViewById(R.id.button_new).setOnClickListener(this);
         findViewById(R.id.button_test).setOnClickListener(this);
         findViewById(R.id.button_view).setOnClickListener(this);
