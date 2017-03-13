@@ -6,6 +6,8 @@ package test.com.phonedance.utils;
 
 public class SensorData {
 
+    public static final int THRESHOLD = 2;
+
     float x, y, z;
 
     public static final int IDLE_THRESCHOLD = 2;
@@ -14,6 +16,14 @@ public class SensorData {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public boolean approximatelyEqual(SensorData data) {
+        return (
+                (int) Math.abs(x - data.x) < THRESHOLD &&
+                        (int) Math.abs(y - data.y) < THRESHOLD &&
+                        (int) Math.abs(z - data.z) < THRESHOLD
+        );
     }
 
     public SensorData(float[] values) {

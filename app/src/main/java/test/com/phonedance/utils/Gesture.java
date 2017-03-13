@@ -13,7 +13,6 @@ import test.com.phonedance.Global;
 
 public class Gesture {
 
-    public static final int THRESHOLD = 2;
     public static final int IDLE_LIMIT = 10;
     public static final int MIN_COUNT = 50;
 
@@ -58,6 +57,39 @@ public class Gesture {
 
     public void save() {
         Global.gestures.add(this);
+    }
+
+    public String findText() {
+        ArrayList<Gesture> gestures = Global.gestures;
+        float[] results = new float[gestures.size()];
+        for (int i = 0; i < gestures.size(); i++) {
+            Gesture gesture = gestures.get(i);
+            results[i] = gesture.compare(this);
+            Log.i("compare", gesture.getText() + " " + results[i] + "%");
+        }
+        int max = 0;
+        for (int i = 1; i < results.length; i++) {
+            if (results[i] > results[max])
+                max = i;
+        }
+        return gestures.get(max).getText();
+    }
+
+    public int getCount() {
+        return sensorDataList.size();
+    }
+
+    public float compare(Gesture gesture) {
+        int total = Math.min(gesture.getCount(), getCount());
+        int correct = 0;
+        ArrayList<SensorData> data1 = getSensorDataList();
+        ArrayList<SensorData> data2 = gesture.getSensorDataList();
+        for (int i = 0; i < total; i++) {
+            if (data1.get(i).approximatelyEqual(data2.get(i))) {
+                correct++;
+            }
+        }
+        return ((float) correct) / total;
     }
 
     public interface OnGestureCompleteListener {

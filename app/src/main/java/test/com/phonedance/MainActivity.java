@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import junit.framework.Test;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -43,14 +45,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_new:
-                startActivity(new Intent(this,SecondActivity.class));
+                startActivity(new Intent(this, SecondActivity.class));
                 break;
 
             case R.id.button_test:
-                startActivity(new Intent(this,TestActivity.class));
+                startActivity(new Intent(this, TestActivity.class));
                 break;
             case R.id.button_view:
-                startActivity(new Intent(this,ListActivity.class));
+                startActivity(new Intent(this, ListActivity.class));
                 break;
         }
     }
